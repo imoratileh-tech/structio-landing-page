@@ -1,0 +1,348 @@
+/**
+ * STRUCTIO® — Interactive Workflow System Architecture
+ * ENQUIRY → QUALIFICATION → ORGANISATION → RESPONSE → HUMAN HANDOVER → FOLLOW-UP
+ */
+
+.workflow-section {
+  position: relative;
+  background: linear-gradient(180deg, rgba(22, 29, 31, 0.95) 0%, rgba(36, 47, 51, 0.7) 50%, rgba(22, 29, 31, 0.95) 100%);
+  overflow: hidden;
+}
+
+/* Workflow Stage Selector Bar */
+.workflow-nav-strip {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: rgba(22, 29, 31, 0.85);
+  border: 1px solid var(--c-border-dark);
+  border-radius: 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-bottom: var(--space-xl);
+}
+
+.workflow-nav-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.workflow-step-btn {
+  flex: 1;
+  min-width: 170px;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px;
+  border-right: 1px solid var(--c-border-subtle);
+  background: transparent;
+  text-align: left;
+  transition: all var(--duration-fast) var(--ease-out-expo);
+  position: relative;
+}
+
+.workflow-step-btn:last-child {
+  border-right: none;
+}
+
+.workflow-step-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.workflow-step-btn:hover {
+  background: rgba(42, 54, 59, 0.4);
+}
+
+.workflow-step-btn.active {
+  background: rgba(42, 54, 59, 0.75);
+}
+
+.workflow-step-btn.active::after {
+  background-color: var(--c-coral);
+}
+
+.step-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--c-text-muted-on-dark);
+  margin-bottom: 6px;
+}
+
+.workflow-step-btn.active .step-num {
+  color: var(--c-coral);
+}
+
+.step-name {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--c-text-primary-on-dark);
+  text-transform: uppercase;
+}
+
+/* Interactive Workflow Simulation Stage */
+.workflow-simulator-stage {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: clamp(24px, 4vw, 48px);
+  background: rgba(31, 40, 44, 0.6);
+  border: 1px solid var(--c-border-dark);
+  border-radius: 8px;
+  padding: clamp(24px, 4vw, 44px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Stage Narrative & Technical Logic Panel */
+.workflow-narrative-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stage-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stage-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(232, 74, 95, 0.15);
+  color: var(--c-coral);
+  border: 1px solid rgba(232, 74, 95, 0.3);
+}
+
+.stage-latency {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--c-sage);
+}
+
+.stage-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--c-text-primary-on-dark);
+  margin-bottom: 16px;
+}
+
+.stage-description {
+  font-family: var(--font-editorial);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--c-text-secondary-on-dark);
+  margin-bottom: 28px;
+}
+
+.stage-technical-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  background: rgba(22, 29, 31, 0.65);
+  border: 1px solid var(--c-border-subtle);
+  border-radius: 6px;
+  margin-bottom: 28px;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.breakdown-key {
+  font-family: var(--font-mono);
+  color: var(--c-text-muted-on-dark);
+  font-size: 0.8rem;
+}
+
+.breakdown-val {
+  font-family: var(--font-mono);
+  color: var(--c-peach);
+  font-size: 0.85rem;
+}
+
+.stage-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Stage Visualizer & Phone/Data Terminal */
+.workflow-visualizer-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Simulated WhatsApp Interface */
+.simulated-chat-card {
+  background: #172124;
+  border: 1px solid var(--c-border-subtle);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #1E2B2E;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.chat-sender-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-avatar-pill {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--c-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #172124;
+}
+
+.chat-sender-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--c-text-primary-on-dark);
+}
+
+.chat-sender-channel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--c-sage);
+}
+
+.chat-messages-container {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 220px;
+  max-height: 280px;
+  overflow-y: auto;
+  background: rgba(22, 29, 31, 0.7);
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  position: relative;
+  animation: fadeInBubble 0.25s ease-out;
+}
+
+@keyframes fadeInBubble {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-bubble.inbound {
+  align-self: flex-start;
+  background: #243034;
+  color: var(--c-text-primary-on-dark);
+  border-left: 2px solid var(--c-peach);
+}
+
+.chat-bubble.system-ai {
+  align-self: flex-end;
+  background: #233A36;
+  color: #E2F0DE;
+  border-right: 2px solid var(--c-sage);
+}
+
+.chat-bubble.agent-human {
+  align-self: flex-end;
+  background: #3B2B32;
+  color: #FFE6E8;
+  border-right: 2px solid var(--c-coral);
+}
+
+.bubble-meta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+/* Simulated CRM Data Payload Card */
+.simulated-payload-card {
+  background: #141A1C;
+  border: 1px solid var(--c-border-dark);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.payload-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #1B2326;
+  border-bottom: 1px solid rgba(254, 206, 168, 0.1);
+}
+
+.payload-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-peach);
+}
+
+.payload-content {
+  padding: 14px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--c-peach);
+  max-height: 160px;
+  overflow-y: auto;
+  overflow-x: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
