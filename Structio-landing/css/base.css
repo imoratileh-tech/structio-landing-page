@@ -1,0 +1,156 @@
+/**
+ * STRUCTIO® — Design System & Core Tokens
+ * 5-Colour Continuous Visual Environment
+ */
+
+:root {
+  /* The Strict 5-Colour Palette */
+  --c-blue-grey: #2A363B;  /* Depth, typography, structure */
+  --c-coral:     #E84A5F;  /* Energy, emphasis, visual transitions */
+  --c-soft-coral:#FF847C;  /* Warmth, transitional surfaces */
+  --c-peach:     #FECEA8;  /* Light, warmth, visual balance */
+  --c-sage:      #99B898;  /* Calm, balance, subtle accents */
+
+  /* Neutral & Canvas Tones derived from palette */
+  --c-canvas-dark: #1F272A;
+  --c-canvas-deep: #161D1F;
+  --c-canvas-light: #F7F5F0;
+  --c-canvas-warm: #FAF4EE;
+  --c-surface-dark: #242F33;
+  --c-surface-card: #2D3A3F;
+  --c-surface-card-hover: #344349;
+  
+  /* Text & Foreground */
+  --c-text-primary-on-dark: #F7F5F0;
+  --c-text-secondary-on-dark: #B4BFC3;
+  --c-text-muted-on-dark: #7D8C91;
+  
+  --c-text-primary-on-light: #2A363B;
+  --c-text-secondary-on-light: #4F5E64;
+  --c-text-muted-on-light: #7E8D93;
+
+  /* Architectural Borders */
+  --c-border-dark: rgba(254, 206, 168, 0.12);
+  --c-border-subtle: rgba(255, 255, 255, 0.08);
+  --c-border-active: rgba(232, 74, 95, 0.4);
+  --c-border-light: rgba(42, 54, 59, 0.14);
+
+  /* Typography Stacks */
+  --font-display: 'Archivo Expanded', 'Archivo', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-editorial: 'Archivo', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, Menlo, monospace;
+
+  /* Spacing Scale */
+  --space-unit: 8px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 128px;
+  --space-5xl: 160px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 180ms;
+  --duration-normal: 320ms;
+  --duration-slow: 600ms;
+
+  /* Container width */
+  --max-content-width: 1360px;
+  --container-padding: clamp(20px, 4vw, 48px);
+}
+
+/* Base Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  background-color: var(--c-canvas-deep);
+  color: var(--c-text-primary-on-dark);
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  font-family: var(--font-editorial);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--c-text-primary-on-dark);
+  background-color: var(--c-canvas-deep);
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selection */
+::selection {
+  background-color: var(--c-coral);
+  color: #FFFFFF;
+}
+
+/* Accessible Focus Ring */
+:focus-visible {
+  outline: 2px solid var(--c-peach);
+  outline-offset: 3px;
+}
+
+/* Media defaults */
+img, svg, canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Utility classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

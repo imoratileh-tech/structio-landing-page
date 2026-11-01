@@ -1,0 +1,165 @@
+/**
+ * STRUCTIO® — Typography System
+ * Editorial Authority + Architectural Precision
+ */
+
+/* Display Titles */
+.display-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6.5vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--c-text-primary-on-dark);
+  text-wrap: balance;
+}
+
+.display-title-sm {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--c-text-primary-on-dark);
+}
+
+/* Section Headings */
+.section-headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.85rem, 3.8vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+  color: var(--c-text-primary-on-dark);
+}
+
+.section-subhead {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.125rem, 1.8vw, 1.45rem);
+  line-height: 1.5;
+  color: var(--c-text-secondary-on-dark);
+  max-width: 68ch;
+  font-weight: 400;
+}
+
+/* Small Subtitles / Subheadings */
+.h3-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--c-text-primary-on-dark);
+}
+
+.h4-title {
+  font-family: var(--font-editorial);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--c-text-primary-on-dark);
+}
+
+/* Technical Uppercase Labels & Eyebrows */
+.tech-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-peach);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tech-label::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: currentColor;
+  border-radius: 1px;
+}
+
+.tech-label.coral {
+  color: var(--c-coral);
+}
+
+.tech-label.sage {
+  color: var(--c-sage);
+}
+
+.tech-label.soft-coral {
+  color: var(--c-soft-coral);
+}
+
+/* Metadata & Numeric Indicators */
+.meta-num {
+  font-family: var(--font-mono);
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--c-text-muted-on-dark);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--c-text-primary-on-dark);
+}
+
+/* Body Text Variants */
+.body-lead {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--c-text-secondary-on-dark);
+}
+
+.body-regular {
+  font-family: var(--font-editorial);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--c-text-secondary-on-dark);
+}
+
+.body-compact {
+  font-family: var(--font-editorial);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--c-text-muted-on-dark);
+}
+
+/* Editorial Quotes / Statements */
+.editorial-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--c-text-primary-on-dark);
+}
+
+.editorial-mark {
+  color: var(--c-coral);
+}
+
+/* Code / Schema Text */
+.code-block {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--c-peach);
+  background: rgba(42, 54, 59, 0.45);
+  border: 1px solid var(--c-border-dark);
+  border-radius: 4px;
+  padding: var(--space-sm);
+  overflow-x: auto;
+}
