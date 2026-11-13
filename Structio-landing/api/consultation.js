@@ -1,4 +1,4 @@
-const DESTINATION = 'info@structio.com';
+const DESTINATION = 'imoratile.h@gmail.com';
 const MAX_LENGTHS = {
   agency_name: 160,
   contact_name: 120,
